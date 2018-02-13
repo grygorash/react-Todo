@@ -11,3 +11,10 @@
 button{
   margin-right: 10px;
 }
+
+.task-list-error p{
+  margin-top: 0.5em;
+  padding: 5px;
+  background-color: #DC3545;
+  color: #fff;
+}

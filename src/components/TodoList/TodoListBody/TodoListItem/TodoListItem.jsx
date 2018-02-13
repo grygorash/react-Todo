@@ -8,7 +8,8 @@ class TodoListItem extends Component {
     this.state = {
       isComplete: this.props.isComplete,
       task: this.props.task,
-      prevTask: ""
+      prevTask: "",
+      taskError: false
     };
     this.onEditClick = this.onEditClick.bind(this);
     this.onCancelClick = this.onCancelClick.bind(this);
@@ -39,10 +40,17 @@ class TodoListItem extends Component {
   }
 
   handleDelete() {
-    this.props.deleteTask(this.props.id);
+    if (this.state.isComplete === false) {
+      this.setState({
+        taskError: true
+      });
+    } else {
+      this.props.deleteTask(this.props.id);
+    }
   }
 
   onDoneClick() {
+    this.props.doneTask(this.props.id);
     this.setState({
       isComplete: !this.state.isComplete
     });
@@ -74,13 +82,14 @@ class TodoListItem extends Component {
                 style={this.state.isComplete ? {display: "none"} : {display: "inline-block"}}
         > Edit Task
         </Button>
-        <Button color="danger"
-                onClick={this.handleDelete}
-        > Delete Task
-        </Button>
         <Button color={this.state.isComplete ? "warning" : "success"}
                 onClick={this.onDoneClick}
         > {this.state.isComplete ? "Not Done Task" : "Done Task"}
+        </Button>
+        <Button color="danger"
+                onClick={this.handleDelete}
+                style={this.state.taskError ? {display: "none"} : {display: "inline-block"}}
+        > Delete Task
         </Button>
       </div>
     );
@@ -97,6 +106,22 @@ class TodoListItem extends Component {
         </Col>
         <Col md="6">
           {this.renderActionSection()}
+        </Col>
+        <Col md="12"
+             className="task-list-error"
+             style={this.state.taskError ? {display: "inline-block"} : {display: "none"}}
+        >
+          <p>This Task Hasn't Complete Yet... Are You Sure Want To Delete It?</p>
+          <Button color="warning"
+                  onClick={() => {
+                    this.props.deleteTask(this.props.id);
+                  }}
+          >Yes</Button>
+          <Button color="success"
+                  onClick={() => {
+                    this.setState({taskError: false});
+                  }}
+          >No</Button>
         </Col>
       </Row>
     );

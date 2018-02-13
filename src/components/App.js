@@ -22,10 +22,12 @@ class App extends Component {
     super(props);
     this.state = {
       todos,
-      nextKey: 2
+      nextKey: 2,
+      isComplete: false
     };
     this.createTask = this.createTask.bind(this);
     this.deleteTask = this.deleteTask.bind(this);
+    this.doneTask = this.doneTask.bind(this);
   }
 
   createTask(task) {
@@ -34,7 +36,7 @@ class App extends Component {
       nextKey: ++nKey
     });
 
-    let newTodos = [
+    let newTodosCreate = [
       ...this.state.todos,
       {
         id: this.state.nextKey,
@@ -43,16 +45,33 @@ class App extends Component {
       }
     ];
     this.setState({
-      todos: newTodos
+      todos: newTodosCreate
     });
   }
 
   deleteTask(id) {
-    let newTodos = this.state.todos.filter((item) => {
-      return item.id !== id;
+    let newTodosDelete = this.state.todos.filter((task) => {
+      return task.id !== id;
     });
     this.setState({
-      todos: newTodos
+      todos: newTodosDelete
+    });
+  }
+
+  doneTask(id) {
+    let newTodosDone = this.state.todos.map((task) => {
+      if (id !== task.id) {
+        return task;
+      } else {
+        return {
+          id: task.id,
+          task: task.task,
+          isComplete: !task.isComplete
+        };
+      }
+    });
+    this.setState({
+      todos: newTodosDone
     });
   }
 
@@ -61,7 +80,7 @@ class App extends Component {
       <div>
         <h3>React App</h3>
         <TodoCreate createTask={this.createTask} />
-        <TodoList todos={this.state.todos} deleteTask={this.deleteTask} />
+        <TodoList todos={this.state.todos} deleteTask={this.deleteTask} doneTask={this.doneTask} />
       </div>
     );
   }

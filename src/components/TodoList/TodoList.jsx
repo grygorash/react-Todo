@@ -14,7 +14,10 @@ class TodoList extends Component {
     return (
       <Container>
         <TodoListHeader />
-        <TodoListBody todos={this.props.todos} deleteTask={this.props.deleteTask} />
+        <TodoListBody todos={this.props.todos}
+                      deleteTask={this.props.deleteTask}
+                      doneTask={this.props.doneTask}
+        />
       </Container>
     );
   }

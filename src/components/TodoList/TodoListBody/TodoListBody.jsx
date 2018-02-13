@@ -19,6 +19,7 @@ class TodoListBody extends Component {
                                         {...todo}
                                         todos={this.props.todos}
                                         deleteTask={this.props.deleteTask}
+                                        doneTask={this.props.doneTask}
         />
       )
     );
