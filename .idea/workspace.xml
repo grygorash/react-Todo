@@ -4,10 +4,7 @@
     <list default="true" id="bdffc46b-2b5b-4119-a487-83f5045f55fe" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/components/App.js" afterPath="$PROJECT_DIR$/src/components/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoList/TodoList.jsx" afterPath="$PROJECT_DIR$/src/components/TodoList/TodoList.jsx" />
       <change beforePath="$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListBody.jsx" afterPath="$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListBody.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListItem/TodoListItem.css" afterPath="$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListItem/TodoListItem.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListItem/TodoListItem.jsx" afterPath="$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListItem/TodoListItem.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="396">
+              <caret line="72" column="19" lean-forward="true" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -54,8 +51,8 @@
       <file leaf-file-name="TodoListBody.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListBody.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+            <state relative-caret-position="412">
+              <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -63,24 +60,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TodoListItem.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TodoListItem.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListItem/TodoListItem.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="101" column="40" lean-forward="true" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
+            <state relative-caret-position="508">
+              <caret line="116" column="57" lean-forward="true" selection-start-line="116" selection-start-column="57" selection-end-line="116" selection-end-column="57" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TodoListItem.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListItem/TodoListItem.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -176,10 +163,10 @@
         <option value="$PROJECT_DIR$/src/components/TodoList/TodoList.jsx" />
         <option value="$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListItem/Modal/Modal.jsx" />
         <option value="$PROJECT_DIR$/src/components/TodoList/TodoListBody/Modal/Modal.jsx" />
-        <option value="$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListBody.jsx" />
-        <option value="$PROJECT_DIR$/src/components/App.js" />
         <option value="$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListItem/TodoListItem.css" />
         <option value="$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListItem/TodoListItem.jsx" />
+        <option value="$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListBody.jsx" />
+        <option value="$PROJECT_DIR$/src/components/App.js" />
       </list>
     </option>
   </component>
@@ -320,7 +307,7 @@
       <workItem from="1518438709578" duration="1341000" />
       <workItem from="1518441464477" duration="1041000" />
       <workItem from="1518449791445" duration="11343000" />
-      <workItem from="1518515204357" duration="22268000" />
+      <workItem from="1518515204357" duration="23666000" />
     </task>
     <task id="LOCAL-00001" summary="fix preload app">
       <created>1517841581801</created>
@@ -399,11 +386,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518021608975</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add new functional">
+      <created>1518537753655</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1518537753655</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98231000" />
+    <option name="totallyTimeSpent" value="99629000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
@@ -476,7 +470,8 @@
     <MESSAGE value="add Table Qualification" />
     <MESSAGE value="add Table Object + small fix" />
     <MESSAGE value="add Table Evaluation + small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Table Evaluation + small fixes" />
+    <MESSAGE value="add new functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new functional" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -705,30 +700,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/TodoList/TodoList.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListBody.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -745,8 +720,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListItem/TodoListItem.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="101" column="40" lean-forward="true" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
+        <state relative-caret-position="508">
+          <caret line="116" column="57" lean-forward="true" selection-start-line="116" selection-start-column="57" selection-end-line="116" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TodoList/TodoListBody/TodoListBody.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="72" column="19" lean-forward="true" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

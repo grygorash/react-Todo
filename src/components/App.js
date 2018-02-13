@@ -5,16 +5,16 @@ import TodoCreate from "./TodoCreate/TodoCreate";
 import "./App.css";
 
 const todos = [
-  {
-    id: 0,
-    task: "learn React",
-    isComplete: false
-  },
-  {
-    id: 1,
-    task: "eat dinner",
-    isComplete: true
-  }
+  // {
+  //   id: 0,
+  //   task: "learn React",
+  //   isComplete: false
+  // },
+  // {
+  //   id: 1,
+  //   task: "eat dinner",
+  //   isComplete: true
+  // }
 ];
 
 class App extends Component {
@@ -22,7 +22,7 @@ class App extends Component {
     super(props);
     this.state = {
       todos,
-      nextKey: 2,
+      nextKey: 0,
       isComplete: false
     };
     this.createTask = this.createTask.bind(this);
@@ -78,7 +78,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h3>React App</h3>
+        <h3>React ToDo App</h3>
         <TodoCreate createTask={this.createTask} />
         <TodoList todos={this.state.todos} deleteTask={this.deleteTask} doneTask={this.doneTask} />
       </div>
