@@ -1,0 +1,33 @@
+{
+  "extends": "react-app",
+  "plugins": ["react"],
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "rules": {
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
+    "react/no-multi-comp": 0,
+    "react/prefer-es6-class": 1,
+    "react/prefer-stateless-function": 1,
+    "react/jsx-pascal-case": 1,
+    "react/jsx-closing-bracket-location": 1,
+    "jsx-quotes": 2,
+    "no-multi-spaces": 2,
+    "react/jsx-tag-spacing": 1,
+    "react/jsx-curly-spacing": 1,
+    "react/jsx-boolean-value": 2,
+    "jsx-a11y/alt-text": 1,
+    "jsx-a11y/img-redundant-alt": 1,
+    "jsx-a11y/aria-role": 2,
+    "jsx-a11y/no-access-key": 1,
+    "react/no-string-refs": 2,
+    "react/jsx-wrap-multilines": 1,
+    "react/self-closing-comp": 1,
+    "react/jsx-no-bind": 0,
+    "react/require-render-return": 2,
+    "react/sort-comp": 1,
+    "react/no-is-mounted": 2
+  }
+}

@@ -1,0 +1,13 @@
+.todo-list-item{
+  margin: 10px;
+  padding: 10px 10px 20px;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+}
+.todo-list-item:last-child{
+  border: none;
+  padding-bottom: 10px;
+}
+button{
+  margin-right: 10px;
+}

@@ -1,0 +1,13 @@
+.todo-list-body {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.done-task {
+  text-decoration: line-through;
+  color: #eee;
+}
+
+p {
+  word-break: break-all;
+}

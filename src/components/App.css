@@ -1,0 +1,10 @@
+* {
+  text-align: center;
+  border-radius: 5px;
+}
+
+button {
+  text-transform: uppercase;
+  width: 150px;
+  color: #fff!important;
+}
