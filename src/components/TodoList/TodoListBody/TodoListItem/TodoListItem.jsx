@@ -6,7 +6,7 @@ class TodoListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isComplete: this.props.isComplete,
+      // isComplete: this.props.isComplete,
       task: this.props.task,
       prevTask: "",
       taskError: false
@@ -95,14 +95,16 @@ class TodoListItem extends Component {
     );
   }
 
+
   render() {
     return (
       <Row className="todo-list-item">
-        <Col md="6" className={this.state.isComplete ? "done-task" : "not-done-task"}>{this.state.isEditing ?
-          <Input value={this.state.task}
-                 onChange={this.handleChangeInput}
-          /> :
-          <p>{this.state.isEditing ? this.props.task : this.state.task}</p>}
+        <Col md="6" className={this.state.isComplete ? "done-task" : "not-done-task"}>
+          {this.state.isEditing ?
+            <Input value={this.state.task}
+                   onChange={this.handleChangeInput}
+            /> :
+            <p><span>{this.state.date}</span>{this.state.isEditing ? this.props.task : this.state.task}</p>}
         </Col>
         <Col md="6">
           {this.renderActionSection()}

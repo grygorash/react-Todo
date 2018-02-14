@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TodoList from "./TodoList/TodoList";
 import TodoCreate from "./TodoCreate/TodoCreate";
+import TodoListSort from "./TodoListSort/TodoListSort";
 
 import "./App.css";
 
@@ -23,11 +24,13 @@ class App extends Component {
     this.state = {
       todos,
       nextKey: 0,
-      isComplete: false
+      // isComplete: false,
+      sort: false
     };
     this.createTask = this.createTask.bind(this);
     this.deleteTask = this.deleteTask.bind(this);
     this.doneTask = this.doneTask.bind(this);
+    this.sortTask = this.sortTask.bind(this);
   }
 
   createTask(task) {
@@ -75,12 +78,57 @@ class App extends Component {
     });
   }
 
+  sortTask() {
+    if (this.state.sort === false) {
+      let newTodosSort = [].concat(this.state.todos)
+        .sort((a, b) => a.task > b.task)
+        .map(task => {
+          return {
+            id: task.id,
+            task: task.task,
+            isComplete: task.isComplete
+          };
+        });
+      this.setState({
+        todos: newTodosSort,
+        sort: !this.state.sort
+      });
+    } else {
+      let newTodosSort = [].concat(this.state.todos)
+        .sort((a, b) => a.task < b.task)
+        .map(task => {
+          return {
+            id: task.id,
+            task: task.task,
+            isComplete: task.isComplete
+          };
+        });
+      this.setState({
+        todos: newTodosSort,
+        sort: !this.state.sort
+      });
+    }
+  }
+
+  renderEmpty() {
+    if (this.state.todos.length > 1)
+      return <TodoListSort
+        sortTask={this.sortTask}
+        todos={this.state.todos}
+      />;
+  }
+
   render() {
     return (
       <div>
         <h3>React ToDo App</h3>
         <TodoCreate createTask={this.createTask} />
-        <TodoList todos={this.state.todos} deleteTask={this.deleteTask} doneTask={this.doneTask} />
+        <TodoList
+          todos={this.state.todos}
+          deleteTask={this.deleteTask}
+          doneTask={this.doneTask}
+        />
+        {this.renderEmpty()}
       </div>
     );
   }

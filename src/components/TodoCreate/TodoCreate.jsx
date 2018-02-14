@@ -54,7 +54,7 @@ class TodoCreate extends Component {
             <div className="error-message" style={this.state.error ? {display: 'block'} : {display: 'none'}}>Enter Task</div>
           </Col>
           <Col md="6">
-            <Button type="submit" color="success">Add task</Button>
+            <Button type="submit" color="primary">Add task</Button>
           </Col>
         </Form>
       </Container>
