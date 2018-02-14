@@ -6,7 +6,7 @@ class TodoListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // isComplete: this.props.isComplete,
+      isComplete: this.props.isComplete,
       task: this.props.task,
       prevTask: "",
       taskError: false
