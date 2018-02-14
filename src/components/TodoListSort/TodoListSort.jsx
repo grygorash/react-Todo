@@ -9,23 +9,21 @@ class TodoListSort extends Component {
       sortIconTask: false,
       sortIconAction: false
     };
-    this.onSortTask = this.onSortTask.bind(this);
-    this.onSortAction = this.onSortAction.bind(this);
   };
 
-  onSortTask() {
+  onSortTask = () => {
     this.setState({
       sortIconTask: !this.state.sortIconTask
     });
     this.props.sortTask(this.props.id);
-  }
+  };
 
-  onSortAction() {
+  onSortAction = () => {
     this.setState({
       sortIconAction: !this.state.sortIconAction
     });
     this.props.sortAction(this.props.id);
-  }
+  };
 
   render() {
     return (

@@ -11,35 +11,29 @@ class TodoListItem extends Component {
       prevTask: "",
       taskError: false
     };
-    this.onEditClick = this.onEditClick.bind(this);
-    this.onCancelClick = this.onCancelClick.bind(this);
-    this.handleChangeInput = this.handleChangeInput.bind(this);
-    this.onSaveClick = this.onSaveClick.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
-    this.onDoneClick = this.onDoneClick.bind(this);
   };
 
-  onEditClick() {
+  onEditClick = () => {
     this.setState({
       isEditing: true,
       prevTask: this.state.task
     });
-  }
+  };
 
-  onSaveClick() {
+  onSaveClick = () => {
     this.setState({
       isEditing: false
     });
-  }
+  };
 
-  onCancelClick() {
+  onCancelClick = () => {
     this.setState({
       isEditing: false,
       task: this.state.prevTask
     });
-  }
+  };
 
-  handleDelete() {
+  handleDelete = () => {
     if (this.state.isComplete === false) {
       this.setState({
         taskError: true
@@ -47,20 +41,20 @@ class TodoListItem extends Component {
     } else {
       this.props.deleteTask(this.props.id);
     }
-  }
+  };
 
-  onDoneClick() {
+  onDoneClick = () => {
     this.props.doneTask(this.props.id);
     this.setState({
       isComplete: !this.state.isComplete
     });
-  }
+  };
 
-  handleChangeInput(e) {
+  handleChangeInput = e => {
     this.setState({
       task: e.target.value
     });
-  }
+  };
 
   renderActionSection() {
     if (this.state.isEditing) {
@@ -68,10 +62,12 @@ class TodoListItem extends Component {
         <div>
           <Button color="success"
                   onClick={this.onSaveClick}
-          > Save Task </Button>
+          > Save Task
+          </Button>
           <Button color="warning"
                   onClick={this.onCancelClick}
-          > Cancel Editing </Button>
+          > Cancel Editing
+          </Button>
         </div>
       );
     }
@@ -118,12 +114,14 @@ class TodoListItem extends Component {
                   onClick={() => {
                     this.props.deleteTask(this.props.id);
                   }}
-          >Yes</Button>
+          >Yes
+          </Button>
           <Button color="success"
                   onClick={() => {
                     this.setState({taskError: false});
                   }}
-          >No</Button>
+          >No
+          </Button>
         </Col>
       </Row>
     );

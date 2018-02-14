@@ -5,45 +5,20 @@ import TodoListSort from "./TodoListSort/TodoListSort";
 
 import "./App.css";
 
-const todos = [
-  // {
-  //   id: 0,
-  //   task: "learn React",
-  //   isComplete: false
-  // },
-  // {
-  //   id: 1,
-  //   task: "eat dinner",
-  //   isComplete: true
-  // }
-];
-
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos,
-      nextKey: 0,
-      // isComplete: false,
+      todos: [],
       sort: false
     };
-    this.createTask = this.createTask.bind(this);
-    this.deleteTask = this.deleteTask.bind(this);
-    this.doneTask = this.doneTask.bind(this);
-    this.sortTask = this.sortTask.bind(this);
-    this.sortAction = this.sortAction.bind(this);
   }
 
-  createTask(task) {
-    let nKey = this.state.nextKey;
-    this.setState({
-      nextKey: ++nKey
-    });
-
+  createTask = task => {
     let newTodosCreate = [
       ...this.state.todos,
       {
-        id: this.state.nextKey,
+        id: +new Date(),
         task,
         isComplete: false
       }
@@ -51,18 +26,18 @@ class App extends Component {
     this.setState({
       todos: newTodosCreate
     });
-  }
+  };
 
-  deleteTask(id) {
+  deleteTask = id => {
     let newTodosDelete = this.state.todos.filter((task) => {
       return task.id !== id;
     });
     this.setState({
       todos: newTodosDelete
     });
-  }
+  };
 
-  doneTask(id) {
+  doneTask = id => {
     let newTodosDone = this.state.todos.map((task) => {
       if (id !== task.id) {
         return task;
@@ -77,10 +52,10 @@ class App extends Component {
     this.setState({
       todos: newTodosDone
     });
-  }
+  };
 
-  sortTask() {
-    let newTodosSortTask = [].concat(this.state.todos)
+  sortTask = () => {
+    let newTodosSortTask = [...this.state.todos]
       .sort((a, b) => {
         if (this.state.sort === false) {
           return a.task > b.task;
@@ -98,10 +73,10 @@ class App extends Component {
       todos: newTodosSortTask,
       sort: !this.state.sort
     });
-  }
+  };
 
-  sortAction() {
-    let newTodosSortAction = [].concat(this.state.todos)
+  sortAction = () => {
+    let newTodosSortAction = [...this.state.todos]
       .sort((a, b) => {
         if (this.state.sort === false) {
           return a.isComplete > b.isComplete;
@@ -119,28 +94,26 @@ class App extends Component {
       todos: newTodosSortAction,
       sort: !this.state.sort
     });
-  }
+  };
 
-  renderEmpty() {
-    if (this.state.todos.length > 1)
-      return <TodoListSort
-        sortAction={this.sortAction}
-        sortTask={this.sortTask}
-        todos={this.state.todos}
-      />;
-  }
 
   render() {
+    const todos = this.state.todos;
     return (
       <div>
         <h3>React ToDo App</h3>
         <TodoCreate createTask={this.createTask} />
         <TodoList
-          todos={this.state.todos}
+          todos={todos}
           deleteTask={this.deleteTask}
           doneTask={this.doneTask}
         />
-        {this.renderEmpty()}
+        {todos.length > 1 &&
+        <TodoListSort
+          sortAction={this.sortAction}
+          sortTask={this.sortTask}
+          todos={todos}
+        />}
       </div>
     );
   }
