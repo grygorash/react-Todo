@@ -31,6 +31,7 @@ class App extends Component {
     this.deleteTask = this.deleteTask.bind(this);
     this.doneTask = this.doneTask.bind(this);
     this.sortTask = this.sortTask.bind(this);
+    this.sortAction = this.sortAction.bind(this);
   }
 
   createTask(task) {
@@ -79,40 +80,51 @@ class App extends Component {
   }
 
   sortTask() {
-    if (this.state.sort === false) {
-      let newTodosSort = [].concat(this.state.todos)
-        .sort((a, b) => a.task > b.task)
-        .map(task => {
-          return {
-            id: task.id,
-            task: task.task,
-            isComplete: task.isComplete
-          };
-        });
-      this.setState({
-        todos: newTodosSort,
-        sort: !this.state.sort
+    let newTodosSortTask = [].concat(this.state.todos)
+      .sort((a, b) => {
+        if (this.state.sort === false) {
+          return a.task > b.task;
+        } else {
+          return a.task < b.task;
+        }
+      }).map(task => {
+        return {
+          id: task.id,
+          task: task.task,
+          isComplete: task.isComplete
+        };
       });
-    } else {
-      let newTodosSort = [].concat(this.state.todos)
-        .sort((a, b) => a.task < b.task)
-        .map(task => {
-          return {
-            id: task.id,
-            task: task.task,
-            isComplete: task.isComplete
-          };
-        });
-      this.setState({
-        todos: newTodosSort,
-        sort: !this.state.sort
+    this.setState({
+      todos: newTodosSortTask,
+      sort: !this.state.sort
+    });
+  }
+
+  sortAction() {
+    let newTodosSortAction = [].concat(this.state.todos)
+      .sort((a, b) => {
+        if (this.state.sort === false) {
+          return a.isComplete > b.isComplete;
+        } else {
+          return a.isComplete < b.isComplete;
+        }
+      }).map(task => {
+        return {
+          id: task.id,
+          task: task.task,
+          isComplete: task.isComplete
+        };
       });
-    }
+    this.setState({
+      todos: newTodosSortAction,
+      sort: !this.state.sort
+    });
   }
 
   renderEmpty() {
     if (this.state.todos.length > 1)
       return <TodoListSort
+        sortAction={this.sortAction}
         sortTask={this.sortTask}
         todos={this.state.todos}
       />;
