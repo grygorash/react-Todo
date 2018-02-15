@@ -10,12 +10,13 @@ class App extends Component {
     super(props);
     this.state = {
       todos: [],
-      sort: false
+      sortTask: false,
+      sortAction: false
     };
   }
 
   createTask = task => {
-    let newTodosCreate = [
+    const newTodosCreate = [
       ...this.state.todos,
       {
         id: +new Date(),
@@ -29,7 +30,7 @@ class App extends Component {
   };
 
   deleteTask = id => {
-    let newTodosDelete = this.state.todos.filter((task) => {
+    const newTodosDelete = this.state.todos.filter((task) => {
       return task.id !== id;
     });
     this.setState({
@@ -38,7 +39,7 @@ class App extends Component {
   };
 
   doneTask = id => {
-    let newTodosDone = this.state.todos.map((task) => {
+    const newTodosDone = this.state.todos.map((task) => {
       if (id !== task.id) {
         return task;
       } else {
@@ -55,9 +56,9 @@ class App extends Component {
   };
 
   sortTask = () => {
-    let newTodosSortTask = [...this.state.todos]
+    const newTodosSortTask = [...this.state.todos]
       .sort((a, b) => {
-        if (this.state.sort === false) {
+        if (this.state.sortTask === false) {
           return a.task > b.task;
         } else {
           return a.task < b.task;
@@ -71,14 +72,14 @@ class App extends Component {
       });
     this.setState({
       todos: newTodosSortTask,
-      sort: !this.state.sort
+      sortTask: !this.state.sortTask
     });
   };
 
   sortAction = () => {
-    let newTodosSortAction = [...this.state.todos]
+    const newTodosSortAction = [...this.state.todos]
       .sort((a, b) => {
-        if (this.state.sort === false) {
+        if (this.state.sortAction === false) {
           return a.isComplete > b.isComplete;
         } else {
           return a.isComplete < b.isComplete;
@@ -92,17 +93,16 @@ class App extends Component {
       });
     this.setState({
       todos: newTodosSortAction,
-      sort: !this.state.sort
+      sortAction: !this.state.sortAction
     });
   };
-
 
   render() {
     const todos = this.state.todos;
     return (
       <div>
         <h3>React ToDo App</h3>
-        <TodoCreate createTask={this.createTask} />
+        <TodoCreate createTask={this.createTask} value={this.value} error={this.error} />
         <TodoList
           todos={todos}
           deleteTask={this.deleteTask}
@@ -113,7 +113,8 @@ class App extends Component {
           sortAction={this.sortAction}
           sortTask={this.sortTask}
           todos={todos}
-        />}
+        />
+        }
       </div>
     );
   }

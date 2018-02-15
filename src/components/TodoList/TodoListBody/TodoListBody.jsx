@@ -1,46 +1,29 @@
-import React, { Component } from "react";
+import React from "react";
 import { Row, Col } from "reactstrap";
 
 import TodoListItem from "./TodoListItem/TodoListItem";
 
 import "./TodoListBody.css";
 
-class TodoListBody extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  };
+function TodoListBody(props) {
 
-  renderItems() {
-    let tasks = this.props.todos;
-    return (
-      tasks.map((todo) => <TodoListItem
-          key={todo.id}
-          id={todo.id}
-          {...todo}
-          todos={this.props.todos}
-          deleteTask={this.props.deleteTask}
-          doneTask={this.props.doneTask}
-        />
-      )
-    );
-  }
-
-  renderEmpty() {
-    if (this.props.todos.length === 0) return <div>There Is No Task Here</div>;
-  }
-
-
-  render() {
-    return (
-      <Row className="todo-list-body">
-        <Col md="12">
-          {this.renderItems()}
-          {this.renderEmpty()}
-        </Col>
-      </Row>
-    );
-  }
+  return (
+    <Row className="todo-list-body">
+      <Col md="12">
+        {props.todos.map((todo) => (
+          <TodoListItem
+            key={todo.id}
+            id={todo.id}
+            {...todo}
+            deleteTask={props.deleteTask}
+            doneTask={props.doneTask}
+          />
+        ))}
+        {props.todos.length === 0 && <div>There Is No Task Here</div>}
+      </Col>
+    </Row>
+  );
 }
 
 export default TodoListBody;
+

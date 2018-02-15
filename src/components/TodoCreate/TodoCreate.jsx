@@ -9,12 +9,9 @@ class TodoCreate extends Component {
       value: "",
       error: false
     };
-    this.handleCreate = this.handleCreate.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-
   };
 
-  handleCreate(e) {
+  handleCreate = (e) => {
     e.preventDefault();
 
     if (this.state.value !== "") {
@@ -31,27 +28,29 @@ class TodoCreate extends Component {
     this.setState({
       value: ""
     });
-  }
+  };
 
-  handleChange(e) {
+  handleChange = (e) => {
     this.setState({
       value: e.target.value
     });
-  }
+  };
 
   render() {
     return (
       <Container>
         <Form onSubmit={this.handleCreate}
-              className="todo-create row"
-        >
+              className="todo-create row">
           <Col md="6">
             <Input type="text"
                    placeholder="Enter Your Task"
                    value={this.state.value}
                    onChange={this.handleChange}
             />
-            <div className="error-message" style={this.state.error ? {display: 'block'} : {display: 'none'}}>Enter Task</div>
+            <div className="error-message"
+                 style={this.state.error ? {display: "block"} : {display: "none"}}>
+              Enter Task
+            </div>
           </Col>
           <Col md="6">
             <Button type="submit" color="primary">Add task</Button>
