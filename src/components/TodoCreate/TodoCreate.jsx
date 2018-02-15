@@ -40,7 +40,8 @@ class TodoCreate extends Component {
     return (
       <Container>
         <Form onSubmit={this.handleCreate}
-              className="todo-create row">
+              className="todo-create row"
+        >
           <Col md="6">
             <Input type="text"
                    placeholder="Enter Your Task"
@@ -48,7 +49,8 @@ class TodoCreate extends Component {
                    onChange={this.handleChange}
             />
             <div className="error-message"
-                 style={this.state.error ? {display: "block"} : {display: "none"}}>
+                 style={this.state.error ? {display: "block"} : {display: "none"}}
+            >
               Enter Task
             </div>
           </Col>

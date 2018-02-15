@@ -1,15 +1,13 @@
 .todo-create {
   padding: 10px;
-  border: 1px solid #ccc;
-}
+  border: 1px solid #ccc; }
 
 .error-message {
   width: 50%;
   background: #dc3545;
   color: #fff;
   margin: 10px auto 0;
-  position: relative;
-}
+  position: relative; }
 
 .error-message::before {
   position: absolute;
@@ -18,5 +16,4 @@
   border-bottom: 10px solid #dc3545;
   top: -20px;
   left: 50%;
-  transform: translateX(-50%);
-}
+  transform: translateX(-50%); }

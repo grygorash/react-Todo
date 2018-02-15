@@ -1,20 +1,18 @@
-.todo-list-item{
+.todo-list-item {
   margin: 10px;
   padding: 10px 10px 20px;
   border-bottom: 1px solid #ccc;
-  border-radius: 0;
-}
-.todo-list-item:last-child{
-  border: none;
-  padding-bottom: 10px;
-}
-button{
-  margin-right: 10px;
-}
+  border-radius: 0; }
 
-.task-list-error p{
+.todo-list-item:last-child {
+  border: none;
+  padding-bottom: 10px; }
+
+button {
+  margin-right: 10px; }
+
+.task-list-error p {
   margin-top: 0.5em;
   padding: 5px;
-  background-color: #DC3545;
-  color: #fff;
-}
+  background-color: #dc3545;
+  color: #fff; }

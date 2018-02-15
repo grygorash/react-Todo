@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import App from "./components/App";
 
-import "./index.css";
+import "./index.scss";
 
 import registerServiceWorker from "./registerServiceWorker";
 
